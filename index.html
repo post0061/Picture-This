@@ -1,23 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Picture This!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Picture This!</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <header class="header">
+      <div class="title">
+        <h1>Picture This!</h1>
+        <h4>My Really Cool Blog Post</h4>
+      </div>
 
-<body>
-  <header class="header">
-    <div class="title">
-      <h1>Picture This!</h1>
-      <h4>My Really Cool Blog Post</h4>
-    </div>
-    <img src="images/museum.jpg" alt="placeholder">
+      <picture>
+        <!-- Display Lanscape for Viewports < 960px  -->
+        <source
+          srcset="
+            images/museum_960px.jpg  1x,
+            images/museum_1920px.jpg 2x,
+            images/museum_2880px.jpg 3x
+          "
+          media="(max-width: 959px)"
+        />
 
-  </header>
-</body>
+        <source
+          srcset="
+            images/museum_720px.jpg  1x,
+            images/museum_1440px.jpg 2x,
+            images/museum_2160px.jpg 3x
+          "
+          media="(max-width: 720px)"
+        />
 
+        <source
+          srcset="
+            images/museum_480px.jpg  1x,
+            images/museum_960px.jpg  2x,
+            images/museum_1440px.jpg 3x
+          "
+          media="(max-width: 480px)"
+        />
+
+        <source
+          srcset="
+            images/museum_320px.jpg 1x,
+            images/museum_640px.jpg 2x,
+            images/museum_960px.jpg 3x
+          "
+          media="(max-width: 320px)"
+        />
+
+        <!-- Display Square for Viewports >= 960px -->
+        <source
+          srcset="
+            images/museum_800px.jpg  1x,
+            images/museum_1600px.jpg 2x,
+            images/museum_2400px.jpg 3x
+          "
+          media="(min-width: 1600px)"
+        />
+
+        <source
+          srcset="
+            images/museum_640px.jpg  1x,
+            images/museum_1280px.jpg 2x,
+            images/museum_1920px.jpg 3x
+          "
+          media="(min-width: 1280px)"
+        />
+
+        <source
+          srcset="
+            images/museum_480px.jpg  1x,
+            images/museum_960px.jpg  2x,
+            images/museum_1440px.jpg 3x
+          "
+          media="(min-width: 960px)"
+        />
+        <!-- Default for browsers who do not support <picture> (https://caniuse.com/?search=picture) -->
+        <img src="images/museum.jpg" alt="placeholder" />
+      </picture>
+    </header>
+  </body>
 </html>

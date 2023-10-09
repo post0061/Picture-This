@@ -31,10 +31,23 @@ h4 {
 
 img {
   display: block;
+  width: 100%;
 }
 
 @media (min-width: 960px) {
   .header {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 959px) {
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
   }
 }
